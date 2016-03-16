@@ -1,0 +1,24 @@
+@charset 'utf-8';
+@import  'core/mixins', 'core/functions', 'core/vars';
+
+$panelTitleSize: 1.6rem;
+
+.panel {
+	width: 100%;
+
+	.panel-title {
+		font-size: $panelTitleSize;
+		line-height: 2;
+		text-align: left;
+		text-indent: $padding;
+		background-color: #ebebeb;
+	}
+
+	.panel-content {
+		@extend %clearfix;
+		padding: 0 $padding 15px;
+		overflow-y: auto;
+		overflow-scrolling: touch;
+		-webkit-overflow-scrolling: touch;
+	}
+}

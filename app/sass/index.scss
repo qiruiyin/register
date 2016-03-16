@@ -1,0 +1,212 @@
+@charset 'utf-8';
+@import  'sandal/core', 'core/mixins', 'core/functions';
+@import  'base', 'header', 'search', 'panel', 'button';
+/* index.css */
+
+.swiper-container {
+	@include size(100%);
+}
+
+section {
+	display: none;
+}
+
+$colorLabel: #333;		//左侧提示颜色
+$colorInput: #f39801; //右侧输入颜色
+$colorCoord: #d0d0d0; //坐标颜色
+$colorArrow: #aaa; //箭头颜色
+$coordSize: 20px; // 坐标图大小
+$codeRmSize: $coordSize; //移除副柜大小和坐标图大小一致
+$codeAddSize: 40px; //新增副柜大小
+
+form {
+	@include absolute();
+	@include size(100%);
+	margin-top: - $headerH;
+  padding: $headerH 0;
+  overflow: scroll;
+  overflow-scrolling: touch;
+}
+
+.input-msg {
+	overflow-y: auto;
+	overflow-scrolling: touch;
+	-webkit-overflow-scrolling: touch;
+	
+	& > li {
+		@include relative();
+		margin-top: 10px;
+		line-height: $inputHeight;
+		background-color: $color;
+		text-align: left;
+
+		&:last-child {
+			height: $inputHeight;
+		}
+
+		& > span {
+			padding-right: $padding;
+		}
+	}
+
+	label {
+		@include absolute();
+		height: $inputHeight;
+		padding-left: $padding;
+		padding-right: 10px;
+		background-color: $color;
+		border-radius: $inputRadius 0 0 $inputRadius;
+		display: block;
+		z-index: 1;
+		color: $colorLabel;
+
+		&.require:before {
+			content: '*';
+			@include absolute(top -8px left 5px);
+			color: red;
+			font-size: 1.8rem;
+		}
+	}
+}
+
+.input-msg input, .input-msg select, .slide {
+	@include relative();
+	@include size(100%, $inputHeight);
+	padding-right: $padding;
+	border-radius: $inputRadius;
+	border: 0;
+	display: block;
+	text-align: right;
+	color: $colorInput;
+}
+.input-msg select {
+	direction: rtl;
+	appearance:none;
+}
+.input-tips {
+	position: relative;
+	margin-top: 20px !important;
+
+	& > p {
+		position: absolute;
+		top: -20px;
+		left: 0;
+		@include size(100%,20px);
+		text-indent: $padding;
+		color: red;
+		font-size: 1rem;
+		line-height: 20px;
+	}
+}
+.slide {
+	padding-right: 0;
+}
+
+#node-show input, #coord {
+	padding-right: $inputArrow + $padding + 5px;
+}
+
+#coord {
+	color: $colorCoord;
+}
+
+// 箭头
+.slide-arrow {
+	@include absolute(right $padding top ($inputHeight - $inputArrow)/ 2);
+	@include size($inputArrow);
+	border: 1px solid $colorArrow;
+	border-left: 0;
+	border-bottom: 0;
+	transform: rotate(45deg);
+}
+
+// 坐标
+.coord {
+	@include absolute(right $padding top ($inputHeight - $coordSize)/ 2 - 2px);
+	@include size($coordSize);
+	background: url('../img/gps.png') no-repeat;
+	background-size: auto 80%;
+	background-position: right;
+}
+
+// 删除副柜编码
+.code-rm {
+	& > input {
+		padding-right: $padding + $inputHeight + 5px !important;
+	}
+
+	& > div {
+		@include absolute(right 0 top 0);
+		@include size($inputHeight);
+		background: url('../img/code-rm.png') no-repeat;
+		background-size: 60%;
+		background-position: center;
+		border-radius: 30px;
+	}
+}
+
+// 增加副柜编码
+.code-add {
+	background-color: transparent !important;
+
+	& > div {
+		@include size($codeAddSize);
+		float: right;
+		background: url('../img/code-add.png') no-repeat;
+		background-size: 70%;
+		background-position: center;
+		border-radius: $codeAddSize;
+		margin-right: 20px;
+	}
+}
+
+// 办事处选择
+/*.agency {
+	select {
+		font-size: 1rem;
+	}
+}
+*/
+// 注册成功
+.success-tips {
+	padding: 80px 0;
+
+	& > p {
+		font-size: 2.5rem;
+		color: gray;
+	}
+
+	& > span {
+		font-weight: bold;
+		font-size: 4rem;
+		color: green;
+	}
+}
+
+.area {
+	@extend %clearfix;
+
+	li {
+		float: left;
+		line-height: 2;
+		padding: 0 10px;
+		background-color: #fff;
+		margin: 15px 15px 0 0;
+		display: inline-block;
+	}
+}
+.current-area {
+	li {
+		@include relative();
+		padding-left: 28px;
+		&:before {
+			content: '';
+			@include absolute(left 0 top -2px);
+			@include size(2.6rem);
+			background: url('../img/gps.png') no-repeat;
+			background-size: 50%;
+			background-position: center;
+
+		}
+	}
+}

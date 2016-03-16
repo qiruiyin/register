@@ -1,0 +1,106 @@
+<header>
+	<span>终端注册</span>
+	<a class="close" href="login.html">关闭</a>
+</header>
+
+<form>
+	<ul class="input-msg">
+		<li>
+			<label class="require">网点注册码</label>
+			<input type="text">
+		</li>
+		<li class="area-select" id="province">
+			<label class="require">省份</label>
+			<div class="slide">
+				<input type="text" readonly="readonly">
+			</div>
+		</li>
+		<li class="area-select" id="city">
+			<label class="require">城市</label>
+			<div class="slide">
+				<input type="text" readonly="readonly">
+			</div>
+		</li>
+		<li class="area-select" id="district">
+			<label class="require">区县</label>
+			<div class="slide">
+				<input type="text" readonly="readonly">
+			</div>
+		</li>
+		<li id="node-show">
+			<label class="require">网点编号</label>
+			<div class="slide">
+				<input type="text" readonly="readonly">
+				<a class="slide-arrow"></a>
+			</div>
+		</li>
+		<li>
+			<label class="require">网点名称</label>
+			<input type="text">
+		</li>
+		<li>
+			<label class="require">网点地址</label>
+			<input type="text">
+		</li>
+		<li>
+			<label>详细地址</label>
+			<input type="text">
+		</li>
+		<li>
+			<label class="require">百度坐标</label>
+			<div class="slide">
+				<input id="coord" type="text" readonly="readonly">
+				<div class="coord"></div>
+			</div>
+		</li>
+		<li class="agency">
+			<label class="require">办事处</label>
+			<select>
+				<option>德宏傣族景颇族自治州办事处·德宏傣族景颇族自治州</option>
+				<option>上海</option>
+				<option>山东</option>
+				<option>江苏</option>
+				<option>辽宁</option>
+				<option>河北</option>
+				<option>河南</option>
+				<option>安徽</option>
+				<option>浙江</option>
+				<option>福建</option>
+				<option></option>
+			</select>
+		</li>
+		<li>
+			<label class="require">上网卡类型</label>
+			<input type="text">
+		</li>
+		<li>
+			<label class="require">上网卡号/帐号</label>
+			<select>
+				<option data-tip="0">免费宽带</option>
+				<option data-tip="1">移动宽带</option>
+				<option data-tip="2">联通宽带</option>
+				<option data-tip="3">电信宽带</option>
+				<option data-tip="4">移动3G网卡</option>
+				<option data-tip="5">联通3G网卡</option>
+				<option data-tip="6">电信3G网卡</option>
+				<option data-tip="7">移动4G网卡</option>
+				<option data-tip="8">联通4G网卡</option>
+				<option data-tip="9">电信4G网卡</option>
+			</select>
+		</li>
+		<li class="input-tips">
+			<p>如果上网卡类型为免费宽带输入123456789a</p>
+			<label class="require">主柜编码</label>
+			<input type="text">
+		</li>
+		<li>
+			<label>副柜编码</label>
+			<input type="text">
+		</li>
+		<li class="code-add">
+			<div></div>
+		</li>
+	</ul>
+
+	<a class="btn" id="submit" href="###">提交</a>
+</form>

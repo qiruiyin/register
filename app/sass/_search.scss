@@ -1,0 +1,57 @@
+@charset 'utf-8';
+@import  'core/mixins', 'core/functions', 'core/vars';
+
+.search {
+	@include relative();
+	@include size(100%, $searchInputHeight + 16px);
+	background-color: $colorSearchBg;
+	padding: 8px 10px;
+	text-align: left;
+	
+	input {
+		@include size(100%, $searchInputHeight);
+		border-radius: $inputRadius;
+		border: none;
+		display: block;
+		padding-left: $searchInputHeight + 5px;
+	}
+
+	.search-tips {
+		@include relative(top 8px);
+		line-height: 1.6;
+		font-size: .8em;
+		color: red;
+	}
+
+	&:before {
+		content: '';
+		@include absolute(left 10px);
+		@include size($searchInputHeight);
+		background: #fff url('../img/search.png') no-repeat;
+		background-size: 60%;
+		background-position: center;
+		border-radius: $inputRadius;
+	}
+}
+
+.search-null {
+	padding: 50px;
+	color: #c6c5cb;
+	font-size: 1.6rem;
+	font-size: bold;
+	display: none;
+
+	.img {
+		@include size(64px);
+		background: url('../img/search-big.png') no-repeat;
+		background-size: 100%;
+		background-position: center;
+		margin: 0 auto;
+		margin-bottom: 15px;
+	}
+}
+
+.search-result {
+	margin-top: 30px;
+	padding-bottom: 30px;	
+}

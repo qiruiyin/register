@@ -1,0 +1,35 @@
+@charset 'utf-8';
+
+// 字体
+$fontSize: 62.5%; // html字体大小设置为10px
+$fontSizeBody: 1.6rem; // 设置body字体大小
+
+// 颜色
+$colorBg: #ECF0F1;  // 背景颜色
+$color: #fff;       // 字体颜色
+$color1: #333;   //
+$color2: #2ECC71;   // 
+$color3: #E74C3C;   //
+
+// 搜索框
+$colorSearchBg: #c7c6cc; // 背景色
+$searchInputHeight: 30px;  // 输入框颜色
+
+// 输入框
+$inputHeight: 40px; // 高度
+$inputRadius: 5px;  // 圆角
+$inputLabelWidth: 120px; // 信息宽度和左侧的内间距一样大
+$inputPaddingRight: 5px;
+$inputArrow: 12px; // 箭头大小
+$inputMargin: 10px; // 输入框上下间距
+
+// 城市选择
+$agencyHeight: $inputHeight; // 城市选择高度和输入高度一致
+
+// 常用变量
+$padding: 15px; // 页面左右间距
+
+// header
+$headerH: 50px;
+
+

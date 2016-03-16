@@ -1,0 +1,50 @@
+@charset 'utf-8';
+@import  'core/mixins', 'core/functions', 'core/vars';
+
+* {
+	box-sizing: border-box;
+}
+
+html {
+	@include size(100%);
+	font-size: $fontSize;
+	text-align: center;
+	margin: 0 auto;
+	overflow: hidden;
+}
+
+body {
+	font-family: 'Source Han Sans CN', sans-serif;
+	@include size(100%);
+	font-size: $fontSizeBody;
+	background-color: $colorBg;
+	overflow: hidden;
+}
+
+img {
+	display: block;
+	margin: 0 auto;
+}
+
+a {
+	display: inline-block;
+	color: inherit;
+}
+
+input {
+	outline: none;
+	appearance:none;
+	-webkit-appearance:none;
+}
+
+// 遮罩层
+.shade {
+	@include absolute(top 0 left 0);
+	@include size(100%, 3000px);
+	background-color: rgba(0, 0, 0, .3);
+	z-index: 99;
+}
+
+// 辅助类
+.hide { display: none; }
+.show { display: block; }

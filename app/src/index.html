@@ -2,15 +2,23 @@
 <html>
 @@include('./part/head.html')
 <body>
-<h1>你好</h1>
-<p>我是谁</p>
-<div class="demo">
-	上不去覅额好吧
+<div class="swiper-container">
+	<div class="swiper-wrapper">
+		<div class="swiper-slide main">
+			@@include('./part/main.html')
+		</div>
+	</div>
 </div>
-<section>
-	hwfehnwkjnwenfo
-	<p>efqhwjbn</p>
-	<p>efqhw123e23rwejbn</p>
+
+<section id="node">
+	<div class="swiper-slide node">
+		@@include('./part/node.html')
+	</div>
+</section>
+<section id="area">
+	<div class="swiper-slide area">
+		@@include('./part/area.html')
+	</div>
 </section>
 
 @@include('./part/footer.html')

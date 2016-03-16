@@ -1,0 +1,41 @@
+@charset 'utf-8';
+@import  'core/mixins', 'core/functions', 'core/vars';
+
+$colorHeader: #000; // 头部字体颜色
+$colorHeaderBorder: #d9d9d9; // 头部边框颜色
+$backArrow: 15px;
+$backArrowColor: #aaa;
+
+header {
+	@include relative();
+	@include size(100%, $headerH);
+	background-color: $color;
+	border-bottom: 1px solid $colorHeaderBorder;
+	font-size: 2rem;
+	font-weight: bold;
+	line-height: $headerH;
+	color: $colorHeader;
+	z-index: 2;
+
+	.back {
+		@include size(4.25rem);
+		@include absolute(left 0);
+
+		span {
+			@include absolute(left 0 right 0 top 50%);
+			@include size($backArrow);
+			border: 2px solid $backArrowColor;
+			border-left: 0;
+			border-bottom: 0;
+			transform: rotate(-135deg);
+			display: block;
+			margin: 0 auto;
+			margin-top: -6px;
+		}
+	}
+
+	.close {
+		position: absolute;
+		right: $padding;
+	}
+}

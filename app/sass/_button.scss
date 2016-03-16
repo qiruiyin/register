@@ -1,0 +1,28 @@
+@charset 'utf-8';
+@import  'core/mixins', 'core/functions', 'core/vars';
+
+$colorBtn: #f39801;
+$colorBtnActive: #db8a03;
+
+.btn {
+	background-color: $colorBtn;
+	border-radius: 6px;
+	border-style: none;
+	margin: 40px $padding 0;
+	color: #fff;
+	font-size: 1.8rem;
+	line-height: $inputHeight;
+	display: block;
+	border-radius: 30px;
+
+	&:active {
+		background-color: $colorBtnActive;
+	}
+	&:hover {
+		color: #fff;
+	}
+}
+
+.btn-login {
+	margin: 0 auto;
+}
