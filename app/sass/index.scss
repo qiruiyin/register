@@ -1,7 +1,14 @@
 @charset 'utf-8';
 @import  'sandal/core', 'core/mixins', 'core/functions';
-@import  'base', 'header', 'search', 'panel', 'button';
+@import  'base', 'header', 'search', 'panel', 'button', 'dialog';
 /* index.css */
+$colorLabel: #333;		//左侧提示颜色
+$colorInput: #f39801; //右侧输入颜色
+$colorCoord: #d0d0d0; //坐标颜色
+$colorArrow: #aaa; //箭头颜色
+$coordSize: 20px; // 坐标图大小
+$codeRmSize: $coordSize; //移除副柜大小和坐标图大小一致
+$codeAddSize: 40px; //新增副柜大小
 
 .swiper-container {
 	@include size(100%);
@@ -11,27 +18,31 @@ section {
 	display: none;
 }
 
-$colorLabel: #333;		//左侧提示颜色
-$colorInput: #f39801; //右侧输入颜色
-$colorCoord: #d0d0d0; //坐标颜色
-$colorArrow: #aaa; //箭头颜色
-$coordSize: 20px; // 坐标图大小
-$codeRmSize: $coordSize; //移除副柜大小和坐标图大小一致
-$codeAddSize: 40px; //新增副柜大小
+#iscroll-main {
+	position: absolute;
+	z-index: 1;
+	top: 50px;
+	bottom: 0;
+	left: 0;
+	width: 100%;
+	padding: 0;
+	margin: 0 auto;
+	overflow: hidden;
+}
 
-form {
-	@include absolute();
-	@include size(100%);
-	margin-top: - $headerH;
-  padding: $headerH 0;
-  overflow: scroll;
-  overflow-scrolling: touch;
+.point-num form {
+	position: relative;
+  z-index: 2;
+  background-color: $colorBg;
+  padding-bottom: 30px;
 }
 
 .input-msg {
-	overflow-y: auto;
-	overflow-scrolling: touch;
-	-webkit-overflow-scrolling: touch;
+	list-style: none;
+	padding: 0;
+	margin: 0 auto;
+	width: 100%;
+	padding-bottom: 50px;
 	
 	& > li {
 		@include relative();
@@ -39,10 +50,6 @@ form {
 		line-height: $inputHeight;
 		background-color: $color;
 		text-align: left;
-
-		&:last-child {
-			height: $inputHeight;
-		}
 
 		& > span {
 			padding-right: $padding;
@@ -98,11 +105,8 @@ form {
 		line-height: 20px;
 	}
 }
-.slide {
-	padding-right: 0;
-}
 
-#node-show input, #coord {
+#point-num-show .slide, #coord {
 	padding-right: $inputArrow + $padding + 5px;
 }
 
@@ -147,8 +151,9 @@ form {
 
 // 增加副柜编码
 .code-add {
+	height: $inputHeight;
 	background-color: transparent !important;
-
+	
 	& > div {
 		@include size($codeAddSize);
 		float: right;
@@ -158,6 +163,10 @@ form {
 		border-radius: $codeAddSize;
 		margin-right: 20px;
 	}
+}
+
+.input-msg .submit-btn {
+	background-color: transparent;
 }
 
 // 办事处选择
@@ -198,15 +207,14 @@ form {
 .current-area {
 	li {
 		@include relative();
-		padding-left: 28px;
+		padding-left: 32px;
 		&:before {
 			content: '';
-			@include absolute(left 0 top -2px);
-			@include size(2.6rem);
+			@include absolute(left 0 top 0);
+			@include size(32px);
 			background: url('../img/gps.png') no-repeat;
-			background-size: 50%;
+			background-size: 40%;
 			background-position: center;
-
 		}
 	}
 }

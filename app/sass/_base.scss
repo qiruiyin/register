@@ -10,7 +10,7 @@ html {
 	font-size: $fontSize;
 	text-align: center;
 	margin: 0 auto;
-	overflow: hidden;
+	-ms-touch-action: none;
 }
 
 body {
@@ -39,8 +39,8 @@ input {
 
 // 遮罩层
 .shade {
-	@include absolute(top 0 left 0);
-	@include size(100%, 3000px);
+	@include fixed(top 0 left 0);
+	@include size(100%);
 	background-color: rgba(0, 0, 0, .3);
 	z-index: 99;
 }

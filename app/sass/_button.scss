@@ -14,6 +14,7 @@ $colorBtnActive: #db8a03;
 	line-height: $inputHeight;
 	display: block;
 	border-radius: 30px;
+	text-align: center;
 
 	&:active {
 		background-color: $colorBtnActive;

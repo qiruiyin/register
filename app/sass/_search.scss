@@ -52,6 +52,6 @@
 }
 
 .search-result {
-	margin-top: 30px;
-	padding-bottom: 30px;	
+	@include absolute(top 200px bottom 0);
+	width: 100%;
 }

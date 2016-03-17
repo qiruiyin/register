@@ -3,7 +3,7 @@
 	<a class="close" href="login.html">关闭</a>
 </header>
 
-<form>
+<form id="iscroll-main">
 	<ul class="input-msg">
 		<li>
 			<label class="require">网点注册码</label>
@@ -12,27 +12,31 @@
 		<li class="area-select" id="province">
 			<label class="require">省份</label>
 			<div class="slide">
-				<input type="text" readonly="readonly">
+				<span></span>
 			</div>
+			<input type="hidden">
 		</li>
 		<li class="area-select" id="city">
 			<label class="require">城市</label>
 			<div class="slide">
-				<input type="text" readonly="readonly">
+				<span></span>
 			</div>
+			<input type="hidden">
 		</li>
 		<li class="area-select" id="district">
 			<label class="require">区县</label>
 			<div class="slide">
-				<input type="text" readonly="readonly">
+				<span></span>
 			</div>
+			<input type="hidden">
 		</li>
-		<li id="node-show">
+		<li id="point-num-show">
 			<label class="require">网点编号</label>
 			<div class="slide">
-				<input type="text" readonly="readonly">
+				<span></span>
 				<a class="slide-arrow"></a>
 			</div>
+			<input type="hidden">
 		</li>
 		<li>
 			<label class="require">网点名称</label>
@@ -100,7 +104,8 @@
 		<li class="code-add">
 			<div></div>
 		</li>
+		<li class="submit-btn">
+			<a class="btn" id="submit" href="###">提交</a>
+		</li>
 	</ul>
-
-	<a class="btn" id="submit" href="###">提交</a>
 </form>
