@@ -221,36 +221,24 @@ $('#submit').on(tap, function(e){
 });
 
 // 监听窗口大小变化来解决input focus问题
-// var windowH_init = windowH = $(window).height(),
-// 		$cur_obj,
-// 		scrollH = 0;
-// window.addEventListener('resize', function(e){
-// 	var windowH_now = $(window).height(),
-// 			vh = windowH - windowH_now, // 视口改变大小
-// 			top = $cur_obj.offset().top - $(window).scrollTop(), // 焦点元素距顶部的距离
-// 			num = $('.main li').index($cur_obj.parent()),
-// 			bottom = $cur_obj.parents('.input-msg').height() - num * $cur_obj.height();
+var windowH_init = windowH = $(window).height(),
+		$cur_obj,
+		scrollH = 0;
+window.addEventListener('resize', function(e){
+	var windowH_now = $(window).height(),
+			vh = windowH - windowH_now, // 视口改变大小
+			top = $cur_obj.offset().top - $(window).scrollTop(), // 焦点元素距顶部的距离
+			num = $('.main li').index($cur_obj.parent()),
+			bottom = $cur_obj.parents('.input-msg').height() - num * $cur_obj.height();
+	if (top + vh + $cur_obj.height() > windowH_init) {
+		scrollH = vh + top - windowH_init + $cur_obj.height();
+		$('#iscroll-main .input-msg').css('margin-top', -scrollH);
+	} else {
+		$('#iscroll-main .input-msg').css('margin-top', 0);
+	}
+	windowH = windowH_now;
+});
 
-// 	// if (vh < 0 && bottom < vh) {
-// 	// 	$('#iscroll-main').css({'transform': 'translateY(' + scrollH + ')'})
-// 	// }
-// 	if (top + vh > windowH_init) {
-// 		scrollH = vh + top - windowH_init + $cur_obj.height();	
-// 		// if (bottom < vh) {
-// 		// 	$('#iscroll-main').css({'transform': 'translateY(' + -scrollH + ')'})
-// 		// } else {
-// 		// 	myScroll.scrollTo(0, -scrollH);
-// 		// }
-// 		myScroll.scrollTo(0, -scrollH);
-// 			// $('#iscroll-main').css({'transform': 'translateY(' + -scrollH + 'px)'})
-// 	} else {
-// 			// $('#iscroll-main').css({'transform': 'translateY(' + scrollH + 'px)'})
-// 		myScroll.scrollTo(0, scrollH);
-// 	}
-// 	// alert(scrollH)
-// 	windowH = windowH_now;
-// });
-
-// $('.main input').on('focus', function(){
-// 	$cur_obj = $(this);
-// });
+$('.main input').on('focus', function(){
+	$cur_obj = $(this);
+});
