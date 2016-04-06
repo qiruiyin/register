@@ -51,13 +51,13 @@
 		return gulp.src(_.sass + '/*.scss')
 			.pipe($.plumber({ errorHandler: handleError}))
 			.pipe($.sourcemaps.init())
-			.pipe($.autoprefixer({
-				browers: ['last 2 versions','safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
-			}))
 			.pipe($.sass({
         outputStyle: 'expanded',
         includePaths: [ './bower_components/' ]
       }))
+			.pipe($.autoprefixer({
+				browers: ['last 2 versions','safari 5', 'ie 8', 'ie 9', 'opera 12.1', 'ios 6', 'android 4']
+			}))
 			.pipe($.sourcemaps.write('./'))
 			.pipe(gulp.dest(_.css))
 			.pipe($.size({
